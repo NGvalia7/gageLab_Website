@@ -4,6 +4,13 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Gage Lab - Salk Institute</title>
+<meta name="description" content="The Gage Laboratory at the Salk Institute, led by Fred 'Rusty' Gage. Pioneering research on adult neurogenesis, cellular reprogramming, neuronal mosaicism, and the cellular basis of neurological disease."/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Gage Lab - Salk Institute for Biological Studies"/>
+<meta property="og:description" content="Four decades of discovery on adult neurogenesis and the plasticity of the human brain. Led by Fred 'Rusty' Gage at the Salk Institute."/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Gage Lab - Salk Institute"/>
+<meta name="twitter:description" content="Pioneering research on adult neurogenesis, cellular reprogramming, and the cellular basis of neurological disease."/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -19,6 +26,7 @@ nav.scrolled{background:rgba(11,26,46,0.97)}
 .nav-links a:hover{color:var(--gold2)}
 #hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;background:var(--ink);position:relative;overflow:hidden}
 .hero-particles{position:absolute;inset:0;pointer-events:none;z-index:0}
+#neuronCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;opacity:.45}
 .particle{position:absolute;border-radius:50%;animation:float linear infinite;opacity:0}
 @keyframes float{0%{transform:translateY(100vh) scale(0);opacity:0}10%{opacity:.4}90%{opacity:.2}100%{transform:translateY(-20px) scale(1.2);opacity:0}}
 .hero-left{display:flex;flex-direction:column;justify-content:center;padding:8rem 3rem 5rem 7rem;position:relative;z-index:2}
@@ -33,13 +41,13 @@ nav.scrolled{background:rgba(11,26,46,0.97)}
 .btn-g{padding:.7rem 1.6rem;background:transparent;color:rgba(255,255,255,.75);font-size:.8rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border-radius:3px;border:1px solid rgba(255,255,255,.2);transition:border-color .2s,color .2s;display:inline-block}
 .btn-g:hover{border-color:var(--gold2);color:var(--gold2)}
 .hero-right{position:relative;overflow:hidden}
-.hero-photo{width:100%;height:100%;min-height:100vh;object-fit:cover;object-position:right center;display:block}
+.hero-photo{width:100%;height:110%;min-height:110vh;object-fit:cover;object-position:right center;display:block;will-change:transform;transition:transform .1s linear}
 .hero-photo-overlay{position:absolute;inset:0;background:linear-gradient(to right,var(--ink) 0%,rgba(11,26,46,.3) 45%,transparent 70%),linear-gradient(to top,var(--ink) 0%,transparent 30%)}
 .stats-strip{background:var(--ink2);display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid rgba(255,255,255,.06)}
 .stat-cell{padding:2.5rem 2rem;text-align:center;border-right:1px solid rgba(255,255,255,.06);position:relative;overflow:hidden}
 .stat-cell::after{content:"";position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:0;height:2px;background:var(--gold2);transition:width .5s}
 .stat-cell:hover::after{width:60%}
-.stat-num{font-family:var(--serif);font-size:3rem;color:var(--gold2);display:block;line-height:1;margin-bottom:.4rem}
+.stat-num{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.7rem);color:var(--gold2);display:block;line-height:1;margin-bottom:.4rem;font-weight:600}
 .stat-label{font-size:.68rem;text-transform:uppercase;letter-spacing:.14em;color:rgba(255,255,255,.4)}
 section{scroll-margin-top:64px}
 .s-inner{max-width:1120px;margin:0 auto;padding:0 2.5rem}
@@ -140,6 +148,17 @@ section{scroll-margin-top:64px}
 .t-avatar{width:60px;height:60px;border-radius:50%;margin:0 auto .8rem;background:linear-gradient(135deg,rgba(13,138,122,.3),rgba(200,150,42,.2));border:1.5px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.1rem;color:rgba(255,255,255,.6)}
 .t-name{font-weight:600;font-size:.82rem;color:#fff;margin-bottom:.15rem;line-height:1.3}
 .t-role{font-size:.7rem;color:rgba(255,255,255,.4);font-style:italic;line-height:1.4}
+
+#legacy{padding:8rem 0;background:var(--cream)}
+.legacy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.leg-card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:1.6rem;transition:transform .2s,box-shadow .2s;border-left:3px solid var(--teal)}
+.leg-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(11,26,46,.08)}
+.leg-name{font-family:var(--serif);font-size:1.1rem;color:var(--ink);margin-bottom:.3rem;line-height:1.3}
+.leg-where{font-size:.78rem;font-weight:600;color:var(--teal);margin-bottom:.8rem;line-height:1.4}
+.leg-blurb{font-size:.83rem;color:var(--muted);line-height:1.7;margin-bottom:.9rem;font-weight:300}
+.leg-period{font-size:.66rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);padding-top:.7rem;border-top:1px solid var(--border)}
+.legacy-foot{text-align:center;margin-top:2.5rem;font-size:.85rem;color:var(--muted);font-style:italic;font-weight:300}
+@media(max-width:900px){.legacy-grid{grid-template-columns:1fr}}
 #publications{padding:8rem 0;background:var(--cream)}
 .pub-grid{display:flex;flex-direction:column;gap:.9rem}
 .pub-card{display:grid;grid-template-columns:80px 1fr auto;gap:1.5rem;align-items:start;background:#fff;border:1px solid var(--border);border-radius:8px;padding:1.5rem 1.8rem;transition:border-color .2s,transform .2s}
@@ -191,6 +210,14 @@ section{scroll-margin-top:64px}
 .n-excerpt{font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.7;font-weight:300;flex:1}
 .n-link{display:inline-flex;align-items:center;gap:.35rem;margin-top:1rem;font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--teal2);text-decoration:none;transition:color .2s}
 .n-link:hover{color:var(--gold2)}
+
+#press-strip{background:#050D1A;padding:3.5rem 0;border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05)}
+.ps-label{text-align:center;font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:2rem}
+.ps-logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:1.5rem;max-width:900px;margin:0 auto}
+.ps-logo{font-family:var(--serif);font-size:1.1rem;color:rgba(255,255,255,.55);font-style:italic;letter-spacing:.02em;transition:color .3s}
+.ps-logo:hover{color:var(--gold2)}
+.ps-dot{width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.15)}
+@media(max-width:700px){.ps-dot{display:none}.ps-logos{gap:1rem .8rem}.ps-logo{font-size:.95rem}}
 #contact{padding:8rem 0;background:var(--ink);background-image:radial-gradient(ellipse at 50% 0%,rgba(13,138,122,.18) 0%,transparent 60%)}
 #contact .s-title{color:#fff}
 #contact .s-lead{color:rgba(255,255,255,.5)}
@@ -232,6 +259,7 @@ footer{background:#050D1A;padding:2rem 4rem;display:flex;align-items:center;just
     <li><a href="#research">Research</a></li>
     <li><a href="#awards">Awards</a></li>
     <li><a href="#team">Team</a></li>
+    <li><a href="#legacy">Trainees</a></li>
     <li><a href="#publications">Publications</a></li>
     <li><a href="#patents">Patents</a></li>
     <li><a href="#talks">Talks</a></li>
@@ -240,6 +268,7 @@ footer{background:#050D1A;padding:2rem 4rem;display:flex;align-items:center;just
 </nav>
 
 <section id="hero">
+  <canvas id="neuronCanvas"></canvas>
   <div class="hero-particles" id="particles"></div>
   <div class="hero-left">
     <p class="hero-eyebrow">Salk Institute · Laboratory of Genetics</p>
@@ -258,10 +287,11 @@ footer{background:#050D1A;padding:2rem 4rem;display:flex;align-items:center;just
 
 <div class="stats-strip">
   <div class="stat-cell"><span class="stat-num" data-target="40">0</span><span class="stat-label">Years at Salk</span></div>
+  <div class="stat-cell"><span class="stat-num" data-target="284318" data-suffix="">0</span><span class="stat-label">Citations</span></div>
   <div class="stat-cell"><span class="stat-num" data-target="500">0</span><span class="stat-label">Publications</span></div>
-  <div class="stat-cell"><span class="stat-num" data-target="25">0</span><span class="stat-label">Major Awards</span></div>
-  <div class="stat-cell"><span class="stat-num" data-target="60">0</span><span class="stat-label">Lab Members</span></div>
+  <div class="stat-cell"><span class="stat-num" data-target="200">0</span><span class="stat-label">h-index</span></div>
 </div>
+<p style="text-align:center;font-size:.66rem;color:rgba(255,255,255,.35);background:var(--ink2);padding:0 0 1.2rem;margin:0;font-style:italic;letter-spacing:.04em">Citation data via <a href="https://scholar.google.com/citations?user=eQWJIcIAAAAJ&hl=en" target="_blank" style="color:rgba(232,184,75,.55);text-decoration:none">Google Scholar</a></p>
 
 <section id="about">
   <div class="s-inner">
@@ -673,6 +703,56 @@ footer{background:#050D1A;padding:2rem 4rem;display:flex;align-items:center;just
   </div>
 </section>
 
+
+<section id="legacy">
+  <div class="s-inner">
+    <div class="s-head reveal">
+      <span class="s-tag">Mentorship</span>
+      <h2 class="s-title">Trainees Now Leading the Field</h2>
+      <p class="s-lead">A measure of any career is where its trainees end up. Researchers who began in the Gage Lab now lead programs at top institutions worldwide.</p>
+    </div>
+    <div class="legacy-grid">
+      <div class="leg-card reveal">
+        <div class="leg-name">Jerome Mertens, PhD</div>
+        <div class="leg-where">Associate Professor, UC San Diego</div>
+        <div class="leg-blurb">Adjunct at Salk. Previously Assistant Professor at the University of Innsbruck. Leads the Neural Aging Laboratory studying induced neurons and age-related neurodegeneration.</div>
+        <div class="leg-period">Postdoc · Gage Lab</div>
+      </div>
+      <div class="leg-card reveal">
+        <div class="leg-name">Alysson Muotri, PhD</div>
+        <div class="leg-where">Professor, UC San Diego</div>
+        <div class="leg-blurb">Director of the UCSD Stem Cell Program. Pioneer of LINE-1 retrotransposition work in neurons and of brain organoid models of autism and Neanderthal genetics.</div>
+        <div class="leg-period">Postdoc · Gage Lab, 2002–2008</div>
+      </div>
+      <div class="leg-card reveal">
+        <div class="leg-name">Kristen Brennand, PhD</div>
+        <div class="leg-where">Elizabeth Mears and House Jameson Professor, Yale</div>
+        <div class="leg-blurb">Professor of Psychiatry and Genetics at Yale School of Medicine. Pioneered iPSC modeling of schizophrenia. First-authored the landmark 2011 Nature paper.</div>
+        <div class="leg-period">Postdoc · Gage Lab</div>
+      </div>
+      <div class="leg-card reveal">
+        <div class="leg-name">Sebastian Jessberger, MD</div>
+        <div class="leg-where">Professor and Director, Brain Research Institute, University of Zurich</div>
+        <div class="leg-blurb">EMBO Young Investigator. Leads the Laboratory of Neural Plasticity. Studies molecular and functional heterogeneity of adult neural stem cells.</div>
+        <div class="leg-period">Postdoc · Gage Lab, 2004–2007</div>
+      </div>
+      <div class="leg-card reveal">
+        <div class="leg-name">Henriette van Praag, PhD</div>
+        <div class="leg-where">Professor, Florida Atlantic University</div>
+        <div class="leg-blurb">First author on the landmark 1999 and 2005 exercise-and-neurogenesis papers. Now leads research on exercise, neurogenesis, and cognitive aging.</div>
+        <div class="leg-period">Postdoc · Gage Lab</div>
+      </div>
+      <div class="leg-card reveal">
+        <div class="leg-name">Maria Marchetto, PhD</div>
+        <div class="leg-where">Associate Professor, UC San Diego</div>
+        <div class="leg-blurb">Faculty in Anthropology. Studies human and non-human primate iPSC models to understand uniquely human brain features and neurodevelopmental disorders.</div>
+        <div class="leg-period">Postdoc and Staff Scientist · Gage Lab</div>
+      </div>
+    </div>
+    <p class="legacy-foot reveal">Dozens more trainees lead labs, biotech programs, and clinical teams across the United States, Europe, Asia, and South America.</p>
+  </div>
+</section>
+
 <section id="publications">
   <div class="s-inner">
     <div class="s-head reveal">
@@ -818,6 +898,11 @@ footer{background:#050D1A;padding:2rem 4rem;display:flex;align-items:center;just
           <div class="tl-ttl">Rusty Gage Profile</div>
           <div class="tl-desc">Background and career profile through the Explorers Club, which supports scientific exploration across disciplines.</div>
         </a>
+        <a class="talk-link" href="https://www.facebook.com/watch/?v=562383937579594" target="_blank">
+          <div class="tl-src">Facebook · Salk Institute</div>
+          <div class="tl-ttl">Featured Talk on Neurogenesis</div>
+          <div class="tl-desc">Rusty speaking on the brain's lifelong capacity for change, with footage of the lab and patient-derived neurons in action.</div>
+        </a>
         <a class="talk-link" href="https://gage.salk.edu/press/" target="_blank">
           <div class="tl-src">Salk Lab</div>
           <div class="tl-ttl">All Press and Media</div>
@@ -900,6 +985,30 @@ footer{background:#050D1A;padding:2rem 4rem;display:flex;align-items:center;just
   </div>
 </section>
 
+
+<section id="press-strip">
+  <div class="s-inner">
+    <p class="ps-label">Research from the Gage Lab has been featured in</p>
+    <div class="ps-logos">
+      <span class="ps-logo">Nature</span>
+      <span class="ps-dot"></span>
+      <span class="ps-logo">Science</span>
+      <span class="ps-dot"></span>
+      <span class="ps-logo">Cell</span>
+      <span class="ps-dot"></span>
+      <span class="ps-logo">The New York Times</span>
+      <span class="ps-dot"></span>
+      <span class="ps-logo">NPR</span>
+      <span class="ps-dot"></span>
+      <span class="ps-logo">Scientific American</span>
+      <span class="ps-dot"></span>
+      <span class="ps-logo">BBC</span>
+      <span class="ps-dot"></span>
+      <span class="ps-logo">The Atlantic</span>
+    </div>
+  </div>
+</section>
+
 <section id="contact">
   <div class="s-inner">
     <div class="s-head reveal">
@@ -949,7 +1058,8 @@ for(let i=0;i<25;i++){const p=document.createElement("div");p.className="particl
 const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in","visible")}})},{threshold:.12});
 document.querySelectorAll(".reveal,.reveal-l,.reveal-r,.tl-item,.award-item").forEach(el=>io.observe(el));
 const counters=document.querySelectorAll(".stat-num[data-target]");
-const co=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){const el=e.target,target=parseInt(el.dataset.target);let start=0;const step=ts=>{if(!start)start=ts;const p=Math.min((ts-start)/1800,1),ease=1-Math.pow(1-p,3);el.textContent=Math.floor(ease*target)+"+";if(p<1)requestAnimationFrame(step);else el.textContent=target+"+";};requestAnimationFrame(step);co.unobserve(el)}})},{threshold:.5});
+function fmtNum(n,target){if(target>=10000){return n.toLocaleString("en-US")+"+"}return n+"+"}
+const co=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){const el=e.target,target=parseInt(el.dataset.target);let start=0;const step=ts=>{if(!start)start=ts;const p=Math.min((ts-start)/2200,1),ease=1-Math.pow(1-p,3);el.textContent=fmtNum(Math.floor(ease*target),target);if(p<1)requestAnimationFrame(step);else el.textContent=fmtNum(target,target);};requestAnimationFrame(step);co.unobserve(el)}})},{threshold:.5});
 counters.forEach(c=>co.observe(c));
 const tlprog=document.getElementById("tlprog");
 const tlwrap=document.querySelector(".timeline-wrap");
@@ -962,6 +1072,71 @@ document.querySelectorAll(".flip-card").forEach(c=>{
     c.classList.toggle("flipped");
   });
 });
+
+// Neuron network canvas in hero
+(function(){
+  const c=document.getElementById("neuronCanvas");
+  if(!c)return;
+  const ctx=c.getContext("2d");
+  let nodes=[],w,h;
+  function resize(){
+    const r=c.getBoundingClientRect();
+    w=c.width=r.width*window.devicePixelRatio;
+    h=c.height=r.height*window.devicePixelRatio;
+    nodes=[];
+    const count=Math.floor((w*h)/35000);
+    for(let i=0;i<count;i++){
+      nodes.push({
+        x:Math.random()*w,
+        y:Math.random()*h,
+        vx:(Math.random()-.5)*.25,
+        vy:(Math.random()-.5)*.25,
+        r:Math.random()*1.6+.8
+      });
+    }
+  }
+  function draw(){
+    ctx.clearRect(0,0,w,h);
+    // connections
+    for(let i=0;i<nodes.length;i++){
+      for(let j=i+1;j<nodes.length;j++){
+        const dx=nodes[i].x-nodes[j].x,dy=nodes[i].y-nodes[j].y,d=Math.sqrt(dx*dx+dy*dy);
+        if(d<140*window.devicePixelRatio){
+          ctx.strokeStyle="rgba(17,176,156,"+(1-d/(140*window.devicePixelRatio))*.28+")";
+          ctx.lineWidth=.6*window.devicePixelRatio;
+          ctx.beginPath();ctx.moveTo(nodes[i].x,nodes[i].y);ctx.lineTo(nodes[j].x,nodes[j].y);ctx.stroke();
+        }
+      }
+    }
+    // nodes
+    for(const n of nodes){
+      ctx.fillStyle="rgba(232,184,75,.65)";
+      ctx.beginPath();ctx.arc(n.x,n.y,n.r*window.devicePixelRatio,0,Math.PI*2);ctx.fill();
+      n.x+=n.vx;n.y+=n.vy;
+      if(n.x<0||n.x>w)n.vx*=-1;
+      if(n.y<0||n.y>h)n.vy*=-1;
+    }
+    requestAnimationFrame(draw);
+  }
+  resize();draw();
+  window.addEventListener("resize",resize);
+})();
+
+// Parallax hero photo
+(function(){
+  const photo=document.querySelector(".hero-photo");
+  if(!photo)return;
+  let raf;
+  window.addEventListener("scroll",()=>{
+    if(raf)cancelAnimationFrame(raf);
+    raf=requestAnimationFrame(()=>{
+      const y=window.scrollY;
+      if(y<window.innerHeight){
+        photo.style.transform="translateY("+(y*.18)+"px) scale(1.02)";
+      }
+    });
+  },{passive:true});
+})();
 </script>
 </body>
 </html>
