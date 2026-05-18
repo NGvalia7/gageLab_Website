@@ -139,9 +139,7 @@ section{scroll-margin-top:64px}
 .t-card:hover{background:rgba(255,255,255,.08);transform:translateY(-4px)}
 .t-avatar{width:60px;height:60px;border-radius:50%;margin:0 auto .8rem;background:linear-gradient(135deg,rgba(13,138,122,.3),rgba(200,150,42,.2));border:1.5px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.1rem;color:rgba(255,255,255,.6)}
 .t-name{font-weight:600;font-size:.82rem;color:#fff;margin-bottom:.15rem;line-height:1.3}
-.t-role{font-size:.7rem;color:rgba(255,255,255,.4);font-style:italic;line-height:1.4;margin-bottom:.45rem}
-.t-email{font-size:.65rem;color:rgba(17,176,156,.7);text-decoration:none;letter-spacing:.02em;word-break:break-all;display:inline-block;transition:color .2s}
-.t-email:hover{color:var(--gold2)}
+.t-role{font-size:.7rem;color:rgba(255,255,255,.4);font-style:italic;line-height:1.4}
 #publications{padding:8rem 0;background:var(--cream)}
 .pub-grid{display:flex;flex-direction:column;gap:.9rem}
 .pub-card{display:grid;grid-template-columns:80px 1fr auto;gap:1.5rem;align-items:start;background:#fff;border:1px solid var(--border);border-radius:8px;padding:1.5rem 1.8rem;transition:border-color .2s,transform .2s}
@@ -155,11 +153,14 @@ section{scroll-margin-top:64px}
 #patents{padding:8rem 0;background:#fff}
 .patents-intro{max-width:740px;margin:0 auto 3rem;font-size:.95rem;color:var(--muted);line-height:1.85;font-weight:300;text-align:center}
 .patents-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
-.pat-card{padding:1.6rem;background:var(--cream);border-radius:8px;border-top:3px solid var(--teal);transition:transform .2s,box-shadow .2s}
+.pat-card{display:block;padding:1.6rem;background:var(--cream);border-radius:8px;border-top:3px solid var(--teal);transition:transform .2s,box-shadow .2s;text-decoration:none;color:inherit;position:relative}
 .pat-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(11,26,46,.08)}
-.pat-icon{font-size:1.6rem;margin-bottom:.6rem}
-.pat-h{font-family:var(--serif);font-size:1.05rem;color:var(--ink);margin-bottom:.5rem;line-height:1.4}
-.pat-p{font-size:.82rem;color:var(--muted);line-height:1.7}
+.pat-icon{font-size:1.6rem;margin-bottom:.4rem}
+.pat-meta{font-size:.66rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:.5rem}
+.pat-h{font-family:var(--serif);font-size:1.05rem;color:var(--ink);margin-bottom:.6rem;line-height:1.35}
+.pat-p{font-size:.82rem;color:var(--muted);line-height:1.7;margin-bottom:1rem}
+.pat-go{display:inline-block;font-size:.7rem;font-weight:600;letter-spacing:.05em;color:var(--teal);text-transform:uppercase;transition:color .2s}
+.pat-card:hover .pat-go{color:var(--gold)}
 .patents-cta{text-align:center;margin-top:3rem}
 #talks{padding:8rem 0;background:var(--ink2);position:relative}
 #talks .s-title{color:#fff}
@@ -633,48 +634,48 @@ footer{background:#050D1A;padding:2rem 4rem;display:flex;align-items:center;just
           </div>
         </div>
       </div>
-      <div class="t-card reveal"><div class="t-avatar">SG</div><p class="t-name">Sally Ganley</p><p class="t-role">Lab Administrative Manager</p><a class="t-email" href="mailto:sganley@salk.edu">sganley@salk.edu</a></div>
-      <div class="t-card reveal"><div class="t-avatar">SP</div><p class="t-name">Sarah Parylak</p><p class="t-role">Staff Scientist</p><a class="t-email" href="mailto:sparylak@salk.edu">sparylak@salk.edu</a></div>
-      <div class="t-card reveal"><div class="t-avatar">JT</div><p class="t-name">James Tucker</p><p class="t-role">Staff Scientist</p><a class="t-email" href="mailto:jtucker@salk.edu">jtucker@salk.edu</a></div>
-      <div class="t-card reveal"><div class="t-avatar">IS</div><p class="t-name">Ioana Da Silva</p><p class="t-role">Staff Scientist</p><a class="t-email" href="mailto:initulescu@salk.edu">initulescu@salk.edu</a></div>
-      <div class="t-card reveal"><div class="t-avatar">JH</div><p class="t-name">Joe Herdy</p><p class="t-role">Staff Scientist</p><a class="t-email" href="mailto:jherdy@salk.edu">jherdy@salk.edu</a></div>
-      <div class="t-card reveal"><div class="t-avatar">RL</div><p class="t-name">Raffaella Lucciola</p><p class="t-role">Staff Scientist</p><a class="t-email" href="mailto:rlucciola@salk.edu">rlucciola@salk.edu</a></div>
-      <div class="t-card reveal"><div class="t-avatar">JJ</div><p class="t-name">Jeffrey Jones</p><p class="t-role">Visiting Researcher</p><a class="t-email" href="mailto:jejones@salk.edu">jejones@salk.edu</a></div>
-      <div class="t-card reveal"><div class="t-avatar">MH</div><p class="t-name">Melissa Hernandez</p><p class="t-role">Sr Research Assoc</p><a class="t-email" href="mailto:mhernandez@salk.edu">mhernandez@salk.edu</a></div>
-      <div class="t-card reveal"><div class="t-avatar">SA</div><p class="t-name">Sam Alsolami</p><p class="t-role">Postdoctoral Fellow</p><a class="t-email" href="mailto:salsolami@salk.edu">salsolami@salk.edu</a></div>
-      <div class="t-card reveal"><div class="t-avatar">AF</div><p class="t-name">Adam Farsheed</p><p class="t-role">Postdoctoral Fellow</p><a class="t-email" href="mailto:afarsheed@salk.edu">afarsheed@salk.edu</a></div>
-      <div class="t-card reveal"><div class="t-avatar">ES</div><p class="t-name">Elisa Gorostieta Salas</p><p class="t-role">Postdoctoral Fellow</p><a class="t-email" href="mailto:gsalas@salk.edu">gsalas@salk.edu</a></div>
-      <div class="t-card reveal"><div class="t-avatar">JK</div><p class="t-name">Jeff Katz</p><p class="t-role">Postdoctoral Fellow</p><a class="t-email" href="mailto:jkatz@salk.edu">jkatz@salk.edu</a></div>
-      <div class="t-card reveal"><div class="t-avatar">KO</div><p class="t-name">Kotaro Oiwa</p><p class="t-role">Postdoctoral Fellow</p><a class="t-email" href="mailto:koiwa@salk.edu">koiwa@salk.edu</a></div>
-      <div class="t-card reveal"><div class="t-avatar">IO</div><p class="t-name">Ismail Ozcan</p><p class="t-role">Postdoctoral Fellow</p><a class="t-email" href="mailto:iozcan@salk.edu">iozcan@salk.edu</a></div>
-      <div class="t-card reveal"><div class="t-avatar">JR</div><p class="t-name">Jasmin Revanna</p><p class="t-role">Postdoctoral Fellow</p><a class="t-email" href="mailto:jrevanna@salk.edu">jrevanna@salk.edu</a></div>
-      <div class="t-card reveal"><div class="t-avatar">SS</div><p class="t-name">Sheila Steiner</p><p class="t-role">Postdoctoral Fellow</p><a class="t-email" href="mailto:ssteiner@salk.edu">ssteiner@salk.edu</a></div>
-      <div class="t-card reveal"><div class="t-avatar">RA</div><p class="t-name">Ravi Agarwal</p><p class="t-role">Graduate Student</p><a class="t-email" href="mailto:ragarwal@salk.edu">ragarwal@salk.edu</a></div>
-      <div class="t-card reveal"><div class="t-avatar">LK</div><p class="t-name">Lukas Karbacher</p><p class="t-role">Graduate Student</p><a class="t-email" href="mailto:lkarbacher@salk.edu">lkarbacher@salk.edu</a></div>
-      <div class="t-card reveal"><div class="t-avatar">CL</div><p class="t-name">Christina Lim</p><p class="t-role">Graduate Student</p><a class="t-email" href="mailto:clim@salk.edu">clim@salk.edu</a></div>
-      <div class="t-card reveal"><div class="t-avatar">LM</div><p class="t-name">Lisa Mitchell</p><p class="t-role">Graduate Student</p><a class="t-email" href="mailto:limitchell@salk.edu">limitchell@salk.edu</a></div>
-      <div class="t-card reveal"><div class="t-avatar">VC</div><p class="t-name">Veronica Cereda</p><p class="t-role">Visiting Mentored Rsrch</p><a class="t-email" href="mailto:vcereda@salk.edu">vcereda@salk.edu</a></div>
-      <div class="t-card reveal"><div class="t-avatar">SE</div><p class="t-name">Sophie Eichhorner</p><p class="t-role">Visiting Mentored Rsrch</p><a class="t-email" href="mailto:seichhorner@salk.edu">seichhorner@salk.edu</a></div>
-      <div class="t-card reveal"><div class="t-avatar">AH</div><p class="t-name">Autumn Hudock</p><p class="t-role">Visiting Mentored Rsrch</p><a class="t-email" href="mailto:ahudock@salk.edu">ahudock@salk.edu</a></div>
-      <div class="t-card reveal"><div class="t-avatar">JL</div><p class="t-name">Jessica Lagerwall</p><p class="t-role">Visiting Mentored Rsrch</p><a class="t-email" href="mailto:jlagerwall@salk.edu">jlagerwall@salk.edu</a></div>
-      <div class="t-card reveal"><div class="t-avatar">LT</div><p class="t-name">Larissa Traxler</p><p class="t-role">Visiting Mentored Rsrch</p><a class="t-email" href="mailto:ltraxler@salk.edu">ltraxler@salk.edu</a></div>
-      <div class="t-card reveal"><div class="t-avatar">QX</div><p class="t-name">Qiang Xiao</p><p class="t-role">Visiting Mentored Rsrch</p><a class="t-email" href="mailto:qxiao@salk.edu">qxiao@salk.edu</a></div>
-      <div class="t-card reveal"><div class="t-avatar">LY</div><p class="t-name">Lucia Zhou Yang</p><p class="t-role">Visiting Mentored Rsrch</p><a class="t-email" href="mailto:lzhouyang@salk.edu">lzhouyang@salk.edu</a></div>
-      <div class="t-card reveal"><div class="t-avatar">SB</div><p class="t-name">Simone Benassi</p><p class="t-role">Research Asst III</p><a class="t-email" href="mailto:sbenassi@salk.edu">sbenassi@salk.edu</a></div>
-      <div class="t-card reveal"><div class="t-avatar">IG</div><p class="t-name">Iryna Gallina</p><p class="t-role">Research Asst III</p><a class="t-email" href="mailto:gallina@salk.edu">gallina@salk.edu</a></div>
-      <div class="t-card reveal"><div class="t-avatar">AK</div><p class="t-name">Austin Kang</p><p class="t-role">Research Asst III</p><a class="t-email" href="mailto:akkang@salk.edu">akkang@salk.edu</a></div>
-      <div class="t-card reveal"><div class="t-avatar">BK</div><p class="t-name">Brian Kirk</p><p class="t-role">Research Asst III</p><a class="t-email" href="mailto:bkirk@salk.edu">bkirk@salk.edu</a></div>
-      <div class="t-card reveal"><div class="t-avatar">AS</div><p class="t-name">Amandeep Sharma</p><p class="t-role">Research Asst III</p><a class="t-email" href="mailto:amsharma@salk.edu">amsharma@salk.edu</a></div>
-      <div class="t-card reveal"><div class="t-avatar">RK</div><p class="t-name">Ruth Keithley</p><p class="t-role">Research Asst IV</p><a class="t-email" href="mailto:rkeithley@salk.edu">rkeithley@salk.edu</a></div>
-      <div class="t-card reveal"><div class="t-avatar">EM</div><p class="t-name">Eros Maldonado</p><p class="t-role">Research Asst II</p><a class="t-email" href="mailto:emaldonado@salk.edu">emaldonado@salk.edu</a></div>
-      <div class="t-card reveal"><div class="t-avatar">NG</div><p class="t-name">Nino Gvalia</p><p class="t-role">Research Asst I</p><a class="t-email" href="mailto:ngvalia@salk.edu">ngvalia@salk.edu</a></div>
-      <div class="t-card reveal"><div class="t-avatar">ZQ</div><p class="t-name">Ziwei Qiu</p><p class="t-role">Research Asst I</p><a class="t-email" href="mailto:zqiu@salk.edu">zqiu@salk.edu</a></div>
-      <div class="t-card reveal"><div class="t-avatar">MS</div><p class="t-name">Monisha Saxena</p><p class="t-role">Research Asst I</p><a class="t-email" href="mailto:msaxena@salk.edu">msaxena@salk.edu</a></div>
-      <div class="t-card reveal"><div class="t-avatar">AT</div><p class="t-name">Ariana Tucker</p><p class="t-role">Research Asst I</p><a class="t-email" href="mailto:artucker@salk.edu">artucker@salk.edu</a></div>
-      <div class="t-card reveal"><div class="t-avatar">JF</div><p class="t-name">Joelle Faybishenko</p><p class="t-role">Lab Tech I</p><a class="t-email" href="mailto:jfaybishenko@salk.edu">jfaybishenko@salk.edu</a></div>
-      <div class="t-card reveal"><div class="t-avatar">TH</div><p class="t-name">Tina Ho</p><p class="t-role">Lab Tech I</p><a class="t-email" href="mailto:tho@salk.edu">tho@salk.edu</a></div>
-      <div class="t-card reveal"><div class="t-avatar">TS</div><p class="t-name">Thais Sarraf Sabedot</p><p class="t-role">Bioinformatics Analyst II</p><a class="t-email" href="mailto:tsabedot@salk.edu">tsabedot@salk.edu</a></div>
-      <div class="t-card reveal"><div class="t-avatar">RS</div><p class="t-name">Renata Santos</p><p class="t-role">Research Collaborator</p><a class="t-email" href="mailto:resantos@salk.edu">resantos@salk.edu</a></div>
+      <div class="t-card reveal"><div class="t-avatar">SG</div><p class="t-name">Sally Ganley</p><p class="t-role">Lab Administrative Manager</p></div>
+      <div class="t-card reveal"><div class="t-avatar">SP</div><p class="t-name">Sarah Parylak</p><p class="t-role">Staff Scientist</p></div>
+      <div class="t-card reveal"><div class="t-avatar">JT</div><p class="t-name">James Tucker</p><p class="t-role">Staff Scientist</p></div>
+      <div class="t-card reveal"><div class="t-avatar">IS</div><p class="t-name">Ioana Da Silva</p><p class="t-role">Staff Scientist</p></div>
+      <div class="t-card reveal"><div class="t-avatar">JH</div><p class="t-name">Joe Herdy</p><p class="t-role">Staff Scientist</p></div>
+      <div class="t-card reveal"><div class="t-avatar">RL</div><p class="t-name">Raffaella Lucciola</p><p class="t-role">Staff Scientist</p></div>
+      <div class="t-card reveal"><div class="t-avatar">JJ</div><p class="t-name">Jeffrey Jones</p><p class="t-role">Visiting Researcher</p></div>
+      <div class="t-card reveal"><div class="t-avatar">MH</div><p class="t-name">Melissa Hernandez</p><p class="t-role">Sr Research Assoc</p></div>
+      <div class="t-card reveal"><div class="t-avatar">SA</div><p class="t-name">Sam Alsolami</p><p class="t-role">Postdoctoral Fellow</p></div>
+      <div class="t-card reveal"><div class="t-avatar">AF</div><p class="t-name">Adam Farsheed</p><p class="t-role">Postdoctoral Fellow</p></div>
+      <div class="t-card reveal"><div class="t-avatar">ES</div><p class="t-name">Elisa Gorostieta Salas</p><p class="t-role">Postdoctoral Fellow</p></div>
+      <div class="t-card reveal"><div class="t-avatar">JK</div><p class="t-name">Jeff Katz</p><p class="t-role">Postdoctoral Fellow</p></div>
+      <div class="t-card reveal"><div class="t-avatar">KO</div><p class="t-name">Kotaro Oiwa</p><p class="t-role">Postdoctoral Fellow</p></div>
+      <div class="t-card reveal"><div class="t-avatar">IO</div><p class="t-name">Ismail Ozcan</p><p class="t-role">Postdoctoral Fellow</p></div>
+      <div class="t-card reveal"><div class="t-avatar">JR</div><p class="t-name">Jasmin Revanna</p><p class="t-role">Postdoctoral Fellow</p></div>
+      <div class="t-card reveal"><div class="t-avatar">SS</div><p class="t-name">Sheila Steiner</p><p class="t-role">Postdoctoral Fellow</p></div>
+      <div class="t-card reveal"><div class="t-avatar">RA</div><p class="t-name">Ravi Agarwal</p><p class="t-role">Graduate Student</p></div>
+      <div class="t-card reveal"><div class="t-avatar">LK</div><p class="t-name">Lukas Karbacher</p><p class="t-role">Graduate Student</p></div>
+      <div class="t-card reveal"><div class="t-avatar">CL</div><p class="t-name">Christina Lim</p><p class="t-role">Graduate Student</p></div>
+      <div class="t-card reveal"><div class="t-avatar">LM</div><p class="t-name">Lisa Mitchell</p><p class="t-role">Graduate Student</p></div>
+      <div class="t-card reveal"><div class="t-avatar">VC</div><p class="t-name">Veronica Cereda</p><p class="t-role">Visiting Mentored Rsrch</p></div>
+      <div class="t-card reveal"><div class="t-avatar">SE</div><p class="t-name">Sophie Eichhorner</p><p class="t-role">Visiting Mentored Rsrch</p></div>
+      <div class="t-card reveal"><div class="t-avatar">AH</div><p class="t-name">Autumn Hudock</p><p class="t-role">Visiting Mentored Rsrch</p></div>
+      <div class="t-card reveal"><div class="t-avatar">JL</div><p class="t-name">Jessica Lagerwall</p><p class="t-role">Visiting Mentored Rsrch</p></div>
+      <div class="t-card reveal"><div class="t-avatar">LT</div><p class="t-name">Larissa Traxler</p><p class="t-role">Visiting Mentored Rsrch</p></div>
+      <div class="t-card reveal"><div class="t-avatar">QX</div><p class="t-name">Qiang Xiao</p><p class="t-role">Visiting Mentored Rsrch</p></div>
+      <div class="t-card reveal"><div class="t-avatar">LY</div><p class="t-name">Lucia Zhou Yang</p><p class="t-role">Visiting Mentored Rsrch</p></div>
+      <div class="t-card reveal"><div class="t-avatar">SB</div><p class="t-name">Simone Benassi</p><p class="t-role">Research Asst III</p></div>
+      <div class="t-card reveal"><div class="t-avatar">IG</div><p class="t-name">Iryna Gallina</p><p class="t-role">Research Asst III</p></div>
+      <div class="t-card reveal"><div class="t-avatar">AK</div><p class="t-name">Austin Kang</p><p class="t-role">Research Asst III</p></div>
+      <div class="t-card reveal"><div class="t-avatar">BK</div><p class="t-name">Brian Kirk</p><p class="t-role">Research Asst III</p></div>
+      <div class="t-card reveal"><div class="t-avatar">AS</div><p class="t-name">Amandeep Sharma</p><p class="t-role">Research Asst III</p></div>
+      <div class="t-card reveal"><div class="t-avatar">RK</div><p class="t-name">Ruth Keithley</p><p class="t-role">Research Asst IV</p></div>
+      <div class="t-card reveal"><div class="t-avatar">EM</div><p class="t-name">Eros Maldonado</p><p class="t-role">Research Asst II</p></div>
+      <div class="t-card reveal"><div class="t-avatar">NG</div><p class="t-name">Nino Gvalia</p><p class="t-role">Research Asst I</p></div>
+      <div class="t-card reveal"><div class="t-avatar">ZQ</div><p class="t-name">Ziwei Qiu</p><p class="t-role">Research Asst I</p></div>
+      <div class="t-card reveal"><div class="t-avatar">MS</div><p class="t-name">Monisha Saxena</p><p class="t-role">Research Asst I</p></div>
+      <div class="t-card reveal"><div class="t-avatar">AT</div><p class="t-name">Ariana Tucker</p><p class="t-role">Research Asst I</p></div>
+      <div class="t-card reveal"><div class="t-avatar">JF</div><p class="t-name">Joelle Faybishenko</p><p class="t-role">Lab Tech I</p></div>
+      <div class="t-card reveal"><div class="t-avatar">TH</div><p class="t-name">Tina Ho</p><p class="t-role">Lab Tech I</p></div>
+      <div class="t-card reveal"><div class="t-avatar">TS</div><p class="t-name">Thais Sarraf Sabedot</p><p class="t-role">Bioinformatics Analyst II</p></div>
+      <div class="t-card reveal"><div class="t-avatar">RS</div><p class="t-name">Renata Santos</p><p class="t-role">Research Collaborator</p></div>
     </div>
   </div>
 </section>
@@ -772,23 +773,29 @@ footer{background:#050D1A;padding:2rem 4rem;display:flex;align-items:center;just
       <span class="s-tag">Innovation</span>
       <h2 class="s-title">Patents</h2>
     </div>
-    <p class="patents-intro reveal">Rusty is a named inventor on dozens of patents spanning neural stem cells, gene therapy vectors, iPSC reprogramming methods, and tools for modeling neurological disease.</p>
+    <p class="patents-intro reveal">Three representative patents from Rusty's body of inventions, spanning thirty years of work on viral vectors, stem cell reprogramming, and Alzheimer's diagnostics. Click any card to read the patent.</p>
     <div class="patents-grid">
-      <div class="pat-card reveal">
-        <div class="pat-icon">🧬</div>
-        <h3 class="pat-h">Neural Stem Cells and Methods of Use</h3>
-        <p class="pat-p">Isolation, propagation, and therapeutic application of neural stem cells, including protocols for differentiating them into specific neuronal subtypes for regenerative medicine.</p>
-      </div>
-      <div class="pat-card reveal">
+      <a class="pat-card reveal" href="https://patents.google.com/patent/US5919667A/en" target="_blank">
         <div class="pat-icon">💉</div>
-        <h3 class="pat-h">Lentiviral Vectors for Gene Delivery</h3>
-        <p class="pat-p">Methods and compositions for delivering genetic material to non-dividing cells, with applications in CNS gene therapy and basic research tools.</p>
-      </div>
-      <div class="pat-card reveal">
+        <div class="pat-meta">US5919667A · 1999</div>
+        <h3 class="pat-h">Modular Assembly Retroviral Vectors and Uses Thereof</h3>
+        <p class="pat-p">Retroviral vectors with modified long terminal repeats that maintain high-level, ligand-modulatable gene expression even in growth-arrested primary cells, where standard retroviral vectors fail.</p>
+        <span class="pat-go">View on Google Patents &#8599;</span>
+      </a>
+      <a class="pat-card reveal" href="https://patents.google.com/patent/US9340775B2/en" target="_blank">
+        <div class="pat-icon">🧬</div>
+        <div class="pat-meta">US9340775B2 · 2016</div>
+        <h3 class="pat-h">Footprint-Free Induced Pluripotent Stem Cells from Human Neural Stem Cells</h3>
+        <p class="pat-p">Methods for generating iPSCs by transfecting human neural stem cells with an episomal vector encoding Oct4 and Nanog, avoiding genomic integration of the reprogramming factors.</p>
+        <span class="pat-go">View on Google Patents &#8599;</span>
+      </a>
+      <a class="pat-card reveal" href="https://patents.google.com/patent/US20250122570A1/en" target="_blank">
         <div class="pat-icon">🔬</div>
-        <h3 class="pat-h">Direct Conversion of Somatic Cells to Neurons</h3>
-        <p class="pat-p">Protocols for converting human fibroblasts into induced neurons without an intermediate pluripotent stage, preserving donor age and patient-specific signatures.</p>
-      </div>
+        <div class="pat-meta">US20250122570A1 · 2025</div>
+        <h3 class="pat-h">Epigenome Biomarkers for Identifying Alzheimer's Disease</h3>
+        <p class="pat-p">DNA methylation signatures across multiple loci used to identify Alzheimer's disease in cells or patients, and to screen candidate therapeutics by tracking how they change those signatures.</p>
+        <span class="pat-go">View on Google Patents &#8599;</span>
+      </a>
     </div>
     <div class="patents-cta reveal">
       <a class="btn-p" href="https://patents.google.com/?inventor=fred+Gage" target="_blank">See All Patents on Google</a>
